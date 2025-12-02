@@ -3,6 +3,7 @@
 Spaceship s;
 ArrayList<Star> mm = new ArrayList<Star>();
 ArrayList<Asteroid> uh = new ArrayList<Asteroid>();
+ArrayList<Bullet> m = new ArrayList<Bullet>();
 public void setup() 
 {
   size(500,500);
@@ -21,21 +22,33 @@ public void setup()
 public void draw() 
 {
   background(255);
+  
   s.move();
   s.show();
-  for(int i =0; i< uh.size(); i++){
-    uh.get(i).move();
-    uh.get(i).show();
-  }
+  
   for(int i =0; i< mm.size(); i++){
     mm.get(i).show();
   }
-  for(int i =0; i< uh.size(); i++){
-    double g = uh.get(i).getX();
-    double m = uh.get(i).getY();
-    if(dist((float)g,(float)m,(float)s.getX(),(float)s.getY())<20){
-      uh.remove(i);
+  
+    for(int i =0; i< m.size(); i++){
+      Bullet ruh = m.get(i);
+      ruh.move();
+      ruh.show();
+        for(int j =0; j< uh.size(); j++){
+        double g = uh.get(j).getX();
+        double z = uh.get(j).getY();
+        if(dist((float)g,(float)z,(float)s.getX(),(float)s.getY())<20){
+          uh.remove(j);
+        }
+        if(dist((float)g,(float)z,(float)ruh.getX(),(float)ruh.getY())<5){
+          uh.remove(j);
+          m.remove(i);
+        }
+      }
     }
+    for(int i =0; i< uh.size(); i++){
+      uh.get(i).move();
+      uh.get(i).show();
   }
 }
 
@@ -54,5 +67,7 @@ public void keyPressed(){
     s.accelerate(-1);
   }else if(key=='d'){
     s.turn(40);
+  }else if(key=='q'||key=='e'){
+    m.add(new Bullet(s));
   }
 }
