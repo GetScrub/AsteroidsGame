@@ -28,7 +28,7 @@ class Asteroid extends Floater{
       rotation = 0 - Math.random()*30;
     }
   }
-  @Override
+  //@Override
   public void move(){
     //change the x and y coordinates by myXspeed and myYspeed       
     myCenterX += myXspeed;    
