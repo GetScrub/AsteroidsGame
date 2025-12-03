@@ -40,7 +40,7 @@ public void draw()
         if(dist((float)g,(float)z,(float)s.getX(),(float)s.getY())<20){
           uh.remove(j);
         }
-        if(dist((float)g,(float)z,(float)ruh.getX(),(float)ruh.getY())<5){
+        if(dist((float)g,(float)z,(float)ruh.getX(),(float)ruh.getY())<10){
           uh.remove(j);
           m.remove(i);
         }
