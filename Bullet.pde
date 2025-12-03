@@ -8,7 +8,7 @@ class Bullet extends Floater{
     accelerate(6);
     myColor = 0;
   }
-  @Override
+  //@Override
   public void show(){
     fill(#FFFFFF);   
     stroke(myColor);  
