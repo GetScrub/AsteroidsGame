@@ -70,7 +70,9 @@ public void keyPressed(){
     s.accelerate(-1);
   }else if(key=='d'){
     s.turn(40);
-  }else if(key=='q'||key=='e'){
+  }else if(key=='q'){
+    m.add(new Bullet(s));
+  }else if(key=='e'){
     m.add(new Bullet(s));
   }
 }
