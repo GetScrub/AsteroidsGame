@@ -39,10 +39,12 @@ public void draw()
         double z = uh.get(j).getY();
         if(dist((float)g,(float)z,(float)s.getX(),(float)s.getY())<20){
           uh.remove(j);
+          break;
         }
         if(dist((float)g,(float)z,(float)ruh.getX(),(float)ruh.getY())<10){
           uh.remove(j);
           m.remove(i);
+          break;
         }
       }
     }
