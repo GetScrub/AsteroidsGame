@@ -49,6 +49,9 @@ public void draw()
     for(int i =0; i< uh.size(); i++){
       uh.get(i).move();
       uh.get(i).show();
+      if(dist((float)uh.get(i).getX(),(float)uh.get(i).getY(),(float)s.getX(),(float)s.getY())<20){
+        uh.remove(i);
+      }
   }
 }
 
