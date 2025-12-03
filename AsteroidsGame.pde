@@ -3,7 +3,7 @@
 Spaceship s;
 ArrayList<Star> starArray = new ArrayList<Star>();
 ArrayList<Asteroid> asteroidArray = new ArrayList<Asteroid>();
-ArrayList<Bullet>bulletArray = new ArrayList<Bullet>();
+ArrayList<Bullet> bulletArray = new ArrayList<Bullet>();
 public void setup() 
 {
   size(500,500);
